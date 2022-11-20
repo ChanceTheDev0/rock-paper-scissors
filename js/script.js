@@ -1,7 +1,7 @@
 let playerscore = 0;
 let computerscore = 0;
 
-function getComputerChoice() {
+function getComputerChoice() {         //cpu player choice function
     let computerChoice = Math.floor(Math.random()*3);
     if (computerChoice === 0) {
         return "rock";
@@ -13,7 +13,7 @@ function getComputerChoice() {
 }
 
 
-function playRound(player, computer) {
+function playRound(player, computer) {     //round of RPS between player and cpu
     if (player == computer){
         return "draw";
     } else if (player == "rock"){
