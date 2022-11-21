@@ -36,3 +36,9 @@ function playRound(player, computer) {     //round of RPS between player and cpu
         }
     }
 }
+
+
+const answer = (prompt("Enter your choice of rock, paper, or scissors: "));
+
+
+
