@@ -1,3 +1,5 @@
+
+
 function getComputerChoice() {         //cpu player choice function
     let computerChoice = Math.floor(Math.random()*3);
     if (computerChoice === 0) {
@@ -34,17 +36,45 @@ function playRound(player, computer) {     //round of RPS between player and cpu
     }
 }
 
-for (i=0; i<5; i++) {
-    let playerSelection = (prompt("Enter your choice of rock, paper, or scissors: "));
-    let computerSelection = getComputerChoice();
-    let playerscore = 0;
-    let computerscore = 0;
-    if (playRound() == "you win") {
-       playerscore + 1;
-    } else if (playRound() == "you lose") {
-       computerscore + 1;
-    } 
-    console.log(playRound(playerSelection, computerSelection));
-    console.log(playerscore, computerscore)
+function playerInput() {
+    let input = prompt ("Choose you weapon (Rock, Paper, Scissor)");
+    return input.toLowerCase();
 }
+
+
+function game() {
+    let playerScore = 0;
+    let computerScore = 0;
+    for(let i = 0; i < 5; i++) {
+        const playerSelection = playerInput();
+        const computerSelection = getComputerChoice();
+        console.log(playRound(playerSelection, computerSelection));
+
+        if(playRound (playerSelection, computerSelection) == "you win") {
+
+            playerScore++;
+
+        } else if (playRound (playerSelection, computerSelection) == "you lose") {
+
+            computerScore++; 
+
+        } 
+    console.log(`Score is ${playerScore} - ${computerScore}`)
+    console.log(">")
+} 
+if (playerScore > computerScore) {
+    console.log(`Player Won the game with a total score of ${playerScore}`)
+} else if (computerScore > playerScore) {
+    console.log(`Computer Won the game with a total score of ${computerScore}`)
+}
+
+console.log("Game Over!")
+}
+
+game();
+
+
+    
+    
+
 
