@@ -31,7 +31,7 @@ function playRound(player, computer) {     //round of RPS between player and cpu
         if (computer == "rock") {
             return "you lose";
         } else if (computer == "paper") {
-            return "you win"
+            return "you win";
         }
     }
 }
